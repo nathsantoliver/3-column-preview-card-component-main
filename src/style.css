@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+/*
+font-family: 'Big Shoulders Display', cursive;  => HEADINGS
+font-weight: 700;   => HEADINGS
+font-family: 'Lexend Deca', sans-serif; => BODY
+font-weight: 400;   => BODY
+font-size: 15px;  BODY
+*/
+
+:root {
+    --bright-orange: hsl(31, 77%, 52%);
+    --dark-cyan: hsl(184, 100%, 22%);
+    --very-dark-cyan: hsl(179, 100%, 13%);
+    --transparent-white: hsla(0, 0%, 100%, 0.75); /* paragraphs */
+    --very-light-gray: hsl(0, 0%, 95%); /* background, headings, buttons */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+main {
+    background-color: var(--very-light-gray);
+    max-width: 1440px;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 65vw;
+    height: 65vh;
+    border-radius: 8px;
+    box-shadow: 20px 0 50px rgba(0, 0, 0, 0.15);
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    overflow: hidden;
+}
+
+.card {
+    padding: 40px;
+    display: grid;
+    align-content: space-between;
+    justify-items: start;
+}
+
+.card:nth-child(1) {
+    background-color: var(--bright-orange);
+}
+
+.card:nth-child(2) {
+    background-color: var(--dark-cyan);
+}
+
+.card:nth-child(3) {
+    background-color: var(--very-dark-cyan);
+}
+
+.card-info {
+    display: grid;
+    grid-template-rows: auto;
+    gap: 25px;
+}
+
+.model {
+    text-transform: uppercase;
+    font-family: 'Big Shoulders Display', cursive;
+    font-weight: 700;
+    font-size: 40px;
+    color: var(--very-light-gray);
+}
+
+.description {
+    color: var(--transparent-white);
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 25px;
+    margin-right: 5px;
+}
+
+button {
+    font-size: 15px;
+    font-weight: bold;
+    width: 140px;
+    height: 50px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+
+    transition: all .25s ease;
+}
+
+.card:nth-child(1) button {
+    background-color: var(--very-light-gray);
+    color: var(--bright-orange);
+}
+
+.card:nth-child(1) button:hover {
+    border: 2px solid var(--transparent-white);
+    background-color: var(--bright-orange);
+    color: var(--very-light-gray);
+}
+
+.card:nth-child(2) button {
+    color: var(--dark-cyan);
+}
+
+.card:nth-child(2) button:hover {
+    border: 2px solid var(--transparent-white);
+    background-color: var(--dark-cyan);
+    color: var(--very-light-gray);
+}
+
+.card:nth-child(3) button {
+    color: var(--very-dark-cyan);
+}
+
+.card:nth-child(3) button:hover {
+    border: 2px solid var(--transparent-white);
+    background-color: var(--very-dark-cyan);
+    color: var(--very-light-gray);
+}
+
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+
+    position: absolute;
+    bottom: 10px;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (max-width: 375px) {
+    main {
+        max-width: 375px;
+        height: max-content;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 100px 0 100px 0;
+    }
+
+    .container {
+        width: 85vw;
+        height: auto;
+
+        display: inline-block;
+        overflow: scroll;
+    }
+
+    .card {
+        gap: 25px;
+    }
+
+    .attribution {
+        padding-top: 50px;
+        position: static;
+        bottom: 0;
+    }
+}
